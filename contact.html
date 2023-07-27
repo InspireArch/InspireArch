@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="icon" href="img/logo2.png" type="image/icon type">
+    <link rel="stylesheet" href="support.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="brand">INSPIRE ARCH</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="exp.html">Explore</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <div class="media-icons">
+            <a href="https://www.facebook.com/profile.php?id=100095304877016"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/inspirearch9/?igshid=NGExMmI2YTkyZg%3D%3D"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/inspire_arch?t=czU0m9drEIu38VPAm4TLSA&s=09"><i class="fab fa-twitter"></i></a>
+        </div>
+        <video class="video-slide active" src="vids/vid7.mp4" autoplay muted loop></video>
+        <div class="content1 active">
+            <h2>Contact Us</h2>
+            <p>Thank you for your interest in medieval architecture and our website. We are thrilled to have an enthusiastic individual like you seeking to explore the wonders of historical structures and design. If you have any inquiries, suggestions, or simply wish to connect with us, this is the place to do so!
+
+                Please feel free to reach out to us using the contact form below, and we will do our best to respond to your message as soon as possible:</p>
+        </div>
+        <div class="container active">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="icons"><i class="fa fa-globe" aria-hidden="true"></i></div>
+                    <div class="texts">
+                        <h3>Address</h3>
+                        <p>NH 8, Delhi - Jaipur Expy, <br>Neemrana, Majrakath, Rajasthan <br>301705</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icons"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                    <div class="texts">
+                        <h3>Phone</h3>
+                        <p>123456789</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icons"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                    <div class="texts">
+                        <h3>Email</h3>
+                        <p>inspire.arch9@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactForm">
+                <form>
+                    <h2>Send Message</h2>
+                    <div class="inputBox">
+                        <input type="text" name="" id="full_name" required="required">
+                        <span>Full Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="" id="email" required="required">
+                        <span>Email</span>
+                    </div>
+                    <div class="inputBox">
+                        <textarea id="text_area" required="required"></textarea>
+                        <span>Type your Message...</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" name="" value="Send">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        function myfunc(event){
+            event.preventDefault();
+
+            var full_name = document.getElementById("full_name").value;
+            var email = document.getElementById("email").value;
+            var text_area = document.getElementById("text_area").value;
+
+            localStorage.setItem('Is_full_name',full_name);
+            localStorage.setItem('Is_email',email);
+            localStorage.setItem('Is_text_area',text_area);
+        }
+        //Javascript of responsive navigation menu
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+    
+        menuBtn.addEventListener("click",()=>{
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+    
+        //Javascript for video slider navigation
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+    
+        var sliderNav = function(manual){
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+    
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+    
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+            
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+    
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+        </script>
+</body>
+</html>

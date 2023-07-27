@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Peep Into the History - Architecture</title>
+    <link rel="icon" href="img/logo2.png" type="image/icon type">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="brand">INSPIRE ARCH</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="exp.html">Explore</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+    </header>
+     
+    <section class="home">
+        <video class="video-slide active" src="vids/1.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="vids/vid4.mp4" autoplay muted loop></video>
+        <video class="video-slide " src="vids/10.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="vids/11.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="vids/vid3.mp4" autoplay muted loop></video>
+        <div class="content active">
+            <h1>A Peep into the
+                History<br><span>Architecture</span></h1>
+            <p>The aim is to investigate the correlation between the science and technology history of India, the architecture and construction practices of medieval India, and the characteristics of buildings on the NU campus. This exploration seeks to reveal and comprehend the concealed historical influences that exist in our everyday experiences and cultivate a greater admiration for the abundant historical legacy.</p>
+            <a href="#">Cluster 9 - LTA</a>
+        </div>
+        <div class="content">
+            <h1>Science and Technology<br><span>In Architecture</span></h1>
+            <p>The relation between science, technology, and the history of architecture and construction practice in India is deeply intertwined and has a rich and diverse heritage. Indian architecture 
+                and construction techniques have evolved over thousands of years, influenced by scientific principles and technological advancements of their time. In different regions of India, traditional construction techniques have been used for centuries. These techniques often involved using locally available materials and craftsmanship skills passed down through generations. They reflect a deep understanding of structural stability, material science, and climate-appropriate designs.</p>
+            <a href="https://inspirearch.wordpress.com/">Redirect to Blog...</a>
+        </div>
+        <div class="content ">
+            <h1>Architecture<br><span>Then and Now</span></h1>
+            <p>A medieval castle showcasing thick stone walls, small windows, and defensive features. 
+                The construction primarily used local stone and required extensive manual labour. While A contemporary skyscraper with a
+                 sleek design, glass curtain walls, and a steel frame. These tall structures exemplify modern engineering and construction techniques.
+            </p>
+            <a href="https://inspirearch.wordpress.com/">Redirect to Blog...</a>
+        </div>
+        <div class="content">
+            <h1>Architecture<br><span>AT NU</span></h1>
+            <p>The architecture of NIIT University in Rajasthan is inspired by medieval Rajasthani
+                architecture, incorporating elements that pay homage to the region's rich historical
+                and cultural heritage. The university's buildings might feature arches and
+                domes reminiscent of the architectural style prevalent in medieval Rajasthani
+                structures. NIIT University's architecture might include intricate stone
+                carvings on facades and walls, similar to the detailed carvings seen in medieval
+                palaces and havelis in Rajasthan.</p>
+                <a href="https://inspirearch.wordpress.com/">Redirect to Blog...</a>
+        </div>
+        <div class="content">
+            <h1>Neemrana<br><span>Fortification</span></h1>
+            <p>The Neemrana Fort Palace is a 15th-century fort that
+                stands on a high plateau, offering breathtaking views of the surrounding landscape.
+                It is one of the oldest heritage properties in India and showcases the architectural
+                grandeur of the Rajput era. The fort is encircled by massive walls and bastions, which were
+                typical features of medieval forts for defense against invaders. The sturdy
+                fortifications demonstrate the strategic importance of the site. The fort palace itself is a prime example of medieval
+                Rajput architecture. It comprises multiple levels and terraces, featuring intricate
+                carvings, lattice work, and frescoes that adorn the walls and ceilings.</p>
+            <a href="https://inspirearch.wordpress.com/">Redirect to Blog...</a>
+        </div>
+        <div class="media-icons">
+            <a href="https://www.facebook.com/profile.php?id=100095304877016"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/inspirearch9/?igshid=NGExMmI2YTkyZg%3D%3D"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/inspire_arch?t=czU0m9drEIu38VPAm4TLSA&s=09"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn "></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+    //Javascript of responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click",()=>{
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+    });
+
+    //Javascript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+        btns.forEach((btn) => {
+            btn.classList.remove("active");
+        });
+
+        slides.forEach((slide) => {
+            slide.classList.remove("active");
+        });
+
+        contents.forEach((content) => {
+            content.classList.remove("active");
+        });
+        
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+            sliderNav(i);
+        });
+    });
+    </script>
+    
+</body>
+</html>
